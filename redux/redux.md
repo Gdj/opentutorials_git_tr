@@ -9,7 +9,8 @@
 
   ## Redux 사용
   > ` var store = Redux.createStore(reducer);`
-  - reducer(state, action) : 상태 관리( 현상태, 실행상태  ); 
+  - reducer(state, action) : 상태 관리( 현상태, 실행상태 ); 
+    + action.type (필수)
   - store.getState()    : 상태 가져오기
   - store.subscribe(Fn) : 상태적용될 함수등록
   - store.dispatch(Obj) : 상태 알림 
