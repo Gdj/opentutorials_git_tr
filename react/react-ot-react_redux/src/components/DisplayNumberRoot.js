@@ -1,11 +1,10 @@
-import Ract, {Component} from 'react';
+import React, {Component} from 'react';
 import DisplayNumber from "../components/DisplayNumber";
 
 export default class DisplayNumberRoot extends Component {
 /*   constructor(props) {
     super(props);
   } */
-
   render(){
     return (
       <div>

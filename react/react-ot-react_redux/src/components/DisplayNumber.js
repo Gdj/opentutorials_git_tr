@@ -1,4 +1,4 @@
-import Ract, {Component} from 'react';
+import React, {Component} from 'react';
 
 export default class DisplayNumber extends Component {
   render(){
