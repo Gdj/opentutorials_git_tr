@@ -1,5 +1,6 @@
-import Ract, {Component} from 'react';
-import DisplayNumber from "../components/DisplayNumber";
+import React, {Component} from 'react';
+//import DisplayNumber from "../components/DisplayNumber";
+import DisplayNumber from "../containers/DisplayNumber";
 
 export default class DisplayNumberRoot extends Component {
 /*   constructor(props) {
@@ -10,7 +11,7 @@ export default class DisplayNumberRoot extends Component {
     return (
       <div>
         <h1>Display Numvber Root</h1>
-        <DisplayNumber number={ this.props.number }></DisplayNumber>
+        <DisplayNumber></DisplayNumber>
       </div>
     )
   }
