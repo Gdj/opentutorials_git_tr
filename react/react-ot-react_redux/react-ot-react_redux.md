@@ -29,7 +29,7 @@ npx create-react-app .
   `npm i -D react-redux`
 - provider : `import {Provider} from 'react-redux';`
   index.js 의 App을 감싸서 하위 컴포넌트에서 접근 가능하게 함.
-- [redux.connect](https://gist.github.com/gaearon/1d19088790e70ac32ea636c025ba424e) : `connect(mapReduxStateToReactProps, mapReduxDispatchToReactProps)(컴포넌트);`
+- [redux.connect](https://gist.github.com/gaearon/1d19088790e70ac32ea636c025ba424e) : `connect(mapReduxStateToReactProps, mapReduxDispatchToReactProps)(컴포넌트);`  
   mapReduxStateToReactProps(state, this.props)
   mapReduxDispatchToReactProps(dispatch, this.props)
   
