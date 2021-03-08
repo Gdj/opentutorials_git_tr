@@ -38,3 +38,19 @@
   - 클래스 : `isB`변수가 true 일대만 `클래스이름`이반영  
   `:class="{ 클래스이름 : isB }"`
   - 스타일 : 
+  
+
+## vuex 데이터관리
+  - vuex 설치
+  `npm i -D vuex`
+### vuex Options 사용
+  - state: 데이터    
+  - mutations : 데이터 변경 `this.$store.commit("구분", 값)`
+    함수(state) 첫번째 인자는 "state"고정
+  - actions : 변경될 데이터 `this.$store.dispatch("구분", 값)`
+  - getters : 데이터 읽기
+  
+  
+## axios 데이터 요청
+  - axios 설치
+  `npm i -D axios`
