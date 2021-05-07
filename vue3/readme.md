@@ -3,52 +3,52 @@
   
 ## Vue 스크립트
   - 기본폼
-  ```
-  export default{
-    data () {
-      return { }
-    },
-  }
-  ```
+    ```
+    export default{
+      data () {
+        return { }
+      },
+    }
+    ```
   - 생성
-  ```
-  const vm = Vue.createApp({  }).mount('#demo')
-  ```
+    ```
+    const vm = Vue.createApp({  }).mount('#demo')
+    ```
 
 
   - data    : 사용할 변수  
-  ```
-  data() {
-    return {
-      변수이름: 값
-    }
-  },
-  ```
+    ```
+    data() {
+      return {
+        변수이름: 값
+      }
+    },
+    ```
   - methods : 사용할 함수 
     + 줄임 `함수이름 : function(){}` => `함수이름(){}`
     + `this` 로 `data, methods` 접근아능.
-  ```
-  methods: {
-    함수이름() {}
-  },
-  ```
+    ```
+    methods: {
+      함수이름() {}
+    },
+    ```
   - computed : 캐싱으로 선언될때 값이 생성되어 여러번 호출해도 번만 계산됨, 
     함수를 변수처럼 사용하여 리턴값을 넘김 파라미터 값없음.
-  ```
-  computed: {
-    함수형변수() {
-      return 값, 식
+    ```
+    computed: {
+      함수형변수() {
+        return 값, 식
+      }
     }
-  }
-  ```
+    ```
   - watch : computed 사용으로 변하지 않을때 초기 이후에 실행될때 computed 대신 사용.
-  ```
-  watch: {
-    함수이름(val) {
-      this.fullName = val + ' ' + this.lastName
-    },
-  }
-  ```
+    ```
+    watch: {
+      함수이름(val) {
+        this.fullName = val + ' ' + this.lastName
+      },
+    }
+    ```
 
 ## Lifecycle
   - beforeCreate
@@ -93,33 +93,63 @@
       * .ctrl .alt .shift (.meta , 맥 => command )
 ## 클래스 & 스타일 바인딩
   - 클래스 : `isB`변수가 true 일대만 `클래스이름`이반영  
-  `:class="{ 클래스이름 : isB }"`
-  - 스타일 : 
+  `v-bind:class="{ 클래스이름 : isB }"`
+  - 스타일 : 바인딩
+  `v-bind:style="{ color: 변수명, fontSize: 변수명 }"`
   
+
+
 
 ## props 
   - 배열타입
-  ```
-  props: ['title', 'likes', 'isPublished', 'commentIds', 'author']
-  ```  
+    ```
+    props: ['title', 'likes', 'isPublished', 'commentIds', 'author']
+    ```  
   - 오브젝트 타입
-  ```
-  props: {
-    title: String,
-    likes: Number,
-    isPublished: Boolean,
-    commentIds: Array,
-    author: Object,
-    callback: Function,
-    contactsPromise: Promise // or any other constructor
-  }
-  ```
+    ```
+    props: {
+      title: String,
+      likes: Number,
+      isPublished: Boolean,
+      commentIds: Array,
+      author: Object,
+      callback: Function,
+      contactsPromise: Promise // or any other constructor
+    }
+    ```
 
 ## 커스텀 이벤트
   - 이벤트 발생
     `this.$emit('이벤트이름', 데이터);`
   - 이벤트 받기
     `v-on:이벤트이름="데이터"`
+
+## 이벤트 버스 
+  - event-bus.js 파일생성 으로 공유
+    ``` 
+      import Vue from "vue";
+      export const EventBus = new Vue();
+    ```
+  - 이벤트 전달 
+    ``` 
+    import {EventBus} from "~/event-bus.js";
+    ```
+    ```
+    EventBus.$emit("이벤트이름", 값);
+    ```
+  - 이벤트 받기
+    ``` 
+    import {EventBus} from "~/event-bus.js";
+    ```
+    ```
+    created(){
+      EventBus.$on("이벤트이름", function(값){
+        console.log(값)
+      })
+    }
+    ```
+  - 이벤트 삭제, 모든이벤트 삭제
+  `EventBus.$off("이벤트이름")`, `EventBus.$off()`
 
 
 ## 플러그인
