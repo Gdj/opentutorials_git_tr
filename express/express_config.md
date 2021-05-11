@@ -8,12 +8,15 @@
   ```
     npm i -g pm2
   ```
+  ### PM2실행 방업
   - 버젼확인 : ` pm2 version`
   - 실행 : `pm2 start index.js --watch`
   - 실행확인 : `pm2 log`
   - 실행중인 인스털스 수 : `pm2 list`
   - 멈추기(all, 0, 1) : `pm2 stop all`
   - 삭제(all, 0, 1)   : `pm2 delete all`
+  
+
 
   ### 실행 안될때
     1. windows PowerShell 프로그램을 관리자 권한으로 실행합니다.
